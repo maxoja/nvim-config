@@ -12,7 +12,7 @@ null_ls.setup({
     debug = false,
     sources = {
         -- TODO: Add Binaries so we can perform Formatting and Diagnostics
-        formatting.prettier.with({}),
+        -- formatting.prettier.with({}),
         -- formatting.black.with({ extra_args = { "--fast" } }),
         -- formatting.stylua,
         -- diagnostics.flake8
