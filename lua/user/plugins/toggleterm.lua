@@ -6,7 +6,7 @@ end
 local keymap = require('lib.utils').keymap
 
 function checkWin()
-    return vim.fn.has('win64') == 1 and 'bash' or 'fish'
+    return vim.fn.has('win64') == 1 and 'bash' or 'zsh'
 end
 
 toggleterm.setup {
