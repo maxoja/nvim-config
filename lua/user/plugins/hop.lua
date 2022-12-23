@@ -13,15 +13,16 @@ local hop_options = { silent = true }
 local modes = { "n", "v", "o" }
 
 -- local hop_leader = "<C-Space>"
-local hop_leader = "<Tab>"
+-- local hop_leader = "<Tab>"
+local hop_leader = "<Space><Space>"
 
 keymap(modes, hop_leader .. "s", "<cmd>HopChar2<CR>", hop_options)
 keymap(modes, hop_leader .. "d", "<cmd>HopChar2<CR>", hop_options)
-keymap(modes, hop_leader .. "<Space>", "<cmd>HopChar2<CR>", hop_options)
+-- keymap(modes, hop_leader .. "<Space>", "<cmd>HopChar2<CR>", hop_options)
 
 keymap(modes, hop_leader .. "w", "<cmd>HopWordCurrentLine<CR>", hop_options)
 keymap(modes, hop_leader .. "W", "<cmd>HopWord<CR>", hop_options)
-keymap(modes, hop_leader .. hop_leader, "<cmd>HopWord<CR>", hop_options)
+keymap(modes, hop_leader .. "<Space>", "<cmd>HopWord<CR>", hop_options)
 
 keymap(modes, hop_leader .. "h", "<cmd>HopAnywhereCurrentLineBC<CR>", hop_options)
 keymap(modes, hop_leader .. "l", "<cmd>HopAnywhereCurrentLineAC<CR>", hop_options)
