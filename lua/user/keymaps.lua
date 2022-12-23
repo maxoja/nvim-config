@@ -16,14 +16,14 @@ vim.g.maplocalleader = " "
 
 -- Append ; or , at end of line in insert mode
 -- also keeps the cursor editing at current place
-keymap("i", "<A-;>", "<Esc>mz<Esc>A;<Esc>`za")
-keymap("i", "<A-,>", "<Esc>mz<Esc>A,<Esc>`za")
-keymap("n", "<A-;>", "<Esc>mz<Esc>A;<Esc>`za<Esc>")
-keymap("n", "<A-,>", "<Esc>mz<Esc>A,<Esc>`za<Esc>")
+keymap("i", "…", "<Esc>mz<Esc>A;<Esc>`za")
+keymap("i", "≤", "<Esc>mz<Esc>A,<Esc>`za")
+keymap("n", "…", "<Esc>mz<Esc>A;<Esc>`za<Esc>")
+keymap("n", "≤", "<Esc>mz<Esc>A,<Esc>`za<Esc>")
 -- Same but for newlines
-keymap("i", "<A-n>", "<Esc>mz<Esc>o<Esc>`za")
+keymap("i", "˜", "<Esc>mz<Esc>o<Esc>`za")
 keymap("i", "<A-S-n>", "<Esc>mz<Esc>O<Esc>`za")
-keymap("n", "<A-n>", "<Esc>mz<Esc>o<Esc>`za<Esc>")
+keymap("n", "˜", "<Esc>mz<Esc>o<Esc>`za<Esc>")
 keymap("n", "<A-S-n>", "<Esc>mz<Esc>O<Esc>`za<Esc>")
 
 -- Ctrl + S to save file :)
@@ -47,7 +47,7 @@ keymap("n", ",p", "\"0p")
 keymap("n", ",P", "\"0P")
 
 -- Zen Mode
-keymap("n", "<A-f>", "<cmd>ZenMode<CR>")
+keymap("n", "ƒ", "<cmd>ZenMode<CR>")
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h")
@@ -71,7 +71,7 @@ keymap("n", "<A-e>", ":NeoTreeFloatToggle<CR>")
 keymap("n", "<C-p>", ":Telescope find_files<CR>")
 
 -- Toggle Symbols Outline
-keymap("n", "<A-o>", ":SymbolsOutline<CR>")
+keymap("n", "ø", ":SymbolsOutline<CR>")
 
 -- Navigate buffers
 keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>")
@@ -99,14 +99,14 @@ keymap("v", ">", ">gv")
 
 -- Move lines up and down
 -- Normal --
-keymap("n", "<A-k>", ":m .-2<CR>==")
-keymap("n", "<A-j>", ":m .+<CR>==")
+keymap("n", "˚", ":m .-2<CR>==")
+keymap("n", "∆", ":m .+<CR>==")
 -- Insert --
-keymap("i", "<A-k>", "<Esc>:m -2<CR>==gi")
-keymap("i", "<A-j>", "<Esc>:m +<CR>==gi")
+keymap("i", "˚", "<Esc>:m -2<CR>==gi")
+keymap("i", "∆", "<Esc>:m +<CR>==gi")
 -- Visual --
-keymap("v", "<A-k>", ":m '<-2<CR>==gv")
-keymap("v", "<A-j>", ":m '>+1<CR>==gv")
+keymap("v", "˚", ":m '<-2<CR>==gv")
+keymap("v", "∆", ":m '>+1<CR>==gv")
 
 -- Resize windows with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>")
@@ -126,12 +126,12 @@ keymap("n", "<C-Del>", "<cmd>e!<CR>")
 
 -- Change the suggestion scrolling - toggling suggestion with Ctrl + Space in Insert mode
 -- Insert --
-vim.keymap.set("i", "<C-Space>", function() return vim.fn.pumvisible() == 0 and '<C-N>' or '<C-Space>' end, {expr = true})
-vim.keymap.set("i", "<Tab>", function() return vim.fn.pumvisible() == 1 and '<C-N>' or '<Tab>' end, {expr = true})
-vim.keymap.set("i", "<S-Tab>", function() return vim.fn.pumvisible() == 1 and '<C-P>' or '<S-Tab>' end, {expr = true})
-vim.keymap.set("i", "<C-j>", function() return vim.fn.pumvisible() == 1 and '<C-N>' or '<C-j>' end, {expr = true})
-vim.keymap.set("i", "<C-k>", function() return vim.fn.pumvisible() == 1 and '<C-P>' or '<C-k>' end, {expr = true})
+vim.keymap.set("i", "<A-Space>", function() return vim.fn.pumvisible() == 0 and '<C-N>' or '<C-Space>' end, { expr = true })
+vim.keymap.set("i", "<Tab>", function() return vim.fn.pumvisible() == 1 and '<C-N>' or '<Tab>' end, { expr = true })
+vim.keymap.set("i", "<S-Tab>", function() return vim.fn.pumvisible() == 1 and '<C-P>' or '<S-Tab>' end, { expr = true })
+vim.keymap.set("i", "<C-j>", function() return vim.fn.pumvisible() == 1 and '<C-N>' or '<C-j>' end, { expr = true })
+vim.keymap.set("i", "<C-k>", function() return vim.fn.pumvisible() == 1 and '<C-P>' or '<C-k>' end, { expr = true })
 
 -- -- Command --
-vim.keymap.set("c", "<C-j>", 'pumvisible() ? "\\<C-n>" : "\\<C-j>"', { expr = true, noremap = true})
-vim.keymap.set("c", "<C-k>", 'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { expr = true, noremap = true})
+vim.keymap.set("c", "<C-j>", 'pumvisible() ? "\\<C-n>" : "\\<C-j>"', { expr = true, noremap = true })
+vim.keymap.set("c", "<C-k>", 'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { expr = true, noremap = true })
