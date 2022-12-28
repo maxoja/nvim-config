@@ -43,6 +43,17 @@ M.setup = function()
     })
 end
 
+local function lsp_format_document(client)
+    -- Set autocmd for document format if server is capable of doing so
+    if client.server_capabilities.documentFormattingProvider then
+        vim.cmd(
+            [[
+                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+            ]]
+        )
+    end
+end
+
 local function lsp_highlight_document(client)
     -- Set autocommands conditional on server_capabilities
     if client.server_capabilities.documentHighlightProvider then
@@ -97,6 +108,8 @@ M.on_attach = function(client, bufnr)
     lsp_keymaps(bufnr)
 
     lsp_highlight_document(client)
+
+    lsp_format_document(client)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
